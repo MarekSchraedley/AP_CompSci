@@ -10,14 +10,27 @@ public class prog72t {
         int count = 0;
         int iterate = a;
         while (iterate != b) {
-            if (a % 100 == 59) { //
+            if (iterate % 100 == 59) { //
+              System.out.println(iterate);
+              if (iterate == 2359) {
                 iterate = 0;
-                count += 1;
-            }
+              } else {
+                iterate -= 59;
+                iterate += 100;
+              }
+            }else{
             iterate += 1;
+            
+            }
+            if (count % 100 == 59) { //
+                System.out.println(count);
+                count -= 59;
+                count += 100;
+            }else{
             count += 1;
+            }
         }
 
-        System.out.print(count);
+        System.out.println(count);
     }
 }
