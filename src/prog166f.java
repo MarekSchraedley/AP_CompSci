@@ -3,12 +3,15 @@ public class prog166f {
         int num = 100; //Loop Control Variable
         int num2 = 1;
         int count = 0;
-        System.out.println("Number  Square Root  Cube");
         while (num <= 110) {
             count = 0;
+            num2 = 1;
             while (num2 <= num) { //finish this up
-
+                count += num2;
+                num2 += 1;
             }
+            System.out.println("The sum of the numbers from 1 to " + num + " is " + count); //finish
+            num += 1;
         }
     }
 }
