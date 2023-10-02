@@ -18,7 +18,11 @@ public class LP4_2 {
                 System.out.print("Too large");
             }
         }else{
-            System.out.print("Too heavy"); //Finish this up. Make an acceptable package possibility.
+            if (kilo > 27) {
+                System.out.print("Too heavy");
+            }else {
+                System.out.print("Good package");
+            }
         }
     }
 }

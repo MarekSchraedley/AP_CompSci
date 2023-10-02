@@ -5,7 +5,7 @@ public class LP4_1 {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Enter the number of copies to be printed: ");
         int copies = keyboard.nextInt();
-        double rate = 0; //Finish this up
+        double rate = 0;
         if (0 < copies && copies < 99) {
             rate = 0.30;
         }else if (100 <= copies && copies <= 499) {
