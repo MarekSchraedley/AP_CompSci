@@ -13,6 +13,10 @@ public class cl193a {
     public cl193a(int kWatts) {
         myKilos = kWatts;
         double myBase = 0.0;
+        double mySurcharge = 0.0;
+        double myCity = 0.0;
+        double myAmount = 0.0;
+        double myExtrapay = 0.0;
 
     }
 
