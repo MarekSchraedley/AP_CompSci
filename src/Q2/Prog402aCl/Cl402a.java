@@ -28,8 +28,11 @@ public class Cl402a {
     public String toString() {
         String bingus = "";
         lcv = 0;
-        //add to bingus using a loop to make it print in a chunk
-        return "stuff";
+        while (lcv != 21) {
+            bingus += "\n" + myID + "\t\t" + myScore + "\t\t" + myDiff;
+        }
+
+        return bingus; //finish the program section
     }
 
 }
