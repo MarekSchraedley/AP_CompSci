@@ -8,7 +8,7 @@ public class Prog402a {
     public static void main(String[] args) {
         try {
             Scanner input = new Scanner(new File("Langdat/prg402a"));
-
+            System.out.println("Car Type\tBase Toll\tFactor\tCost");
             while (input.hasNext()) {
 
             }
