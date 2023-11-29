@@ -16,7 +16,7 @@ public class Prog402a {
             while (input.hasNext()) {
                 id = input.nextInt();
                 id = input.nextInt(); //finish this up
-                Cl213b wowsa = new Cl213b();
+                Cl213b wowsa = new Cl213b(5);//change 5 to input later
             }
 
         } catch (IOException e) {
