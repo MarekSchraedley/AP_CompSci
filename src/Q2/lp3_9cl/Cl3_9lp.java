@@ -1,4 +1,4 @@
-package lp3_9cl;
+package Q2.lp3_9cl;
 
 public class Cl3_9lp {
     private int myByear;

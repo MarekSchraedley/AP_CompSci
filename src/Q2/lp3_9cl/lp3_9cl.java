@@ -1,4 +1,4 @@
-package lp3_9cl;
+package Q2.lp3_9cl;
 import java.util.Scanner;
 public class lp3_9cl {
     public static void main(String[] args) {
