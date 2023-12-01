@@ -1,6 +1,6 @@
-package lp3_10cl;
+package Q2.lp3_10cl;
 
-import lp3_9cl.Cl3_9lp;
+import lp3_10cl.Cl3_10lp;
 
 import java.util.Scanner;
 
