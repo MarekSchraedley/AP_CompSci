@@ -1,4 +1,4 @@
-package Prog214bcl;
+package Q2.Prog214bcl;
 
 public class Cl214b {
     private double myempNum;

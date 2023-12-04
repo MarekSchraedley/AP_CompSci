@@ -1,4 +1,4 @@
-package Prog214bcl;
+package Q2.Prog214bcl;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;

@@ -1,17 +1,23 @@
 package Q2.Prog410t;
 
 public class Cl410t {
-    private int[] myID = new int[25];
-    private int[] myIncome = new int[25];
-    private int[] myMembers = new int[25];
-    private int count = 0;
+    private int myID;
+    private int myIncome;
+    private int myMembers;
 
     public Cl410t(int ID, int income, int members) {
 
-        myID[count] = ID;
-        myIncome[count] = income;
-        myMembers[count] = members;
-        count++;
+        myID = ID;
+        myIncome = income;
+        myMembers = members;
+    }
+
+    public int getID() {return myID;}
+    public int getIncome() {return myIncome;}
+    public int getMembers() {return myMembers;}
+
+    public String toString() {
+        return String.format("%d\t%.2f\t%d", myID, myIncome, myMembers);
     }
 
 }
