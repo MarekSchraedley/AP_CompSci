@@ -2,10 +2,10 @@ package Q2.Prog410t;
 
 public class Cl410t {
     private int myID;
-    private int myIncome;
+    private double myIncome;
     private int myMembers;
 
-    public Cl410t(int ID, int income, int members) {
+    public Cl410t(int ID, double income, int members) {
 
         myID = ID;
         myIncome = income;
@@ -13,7 +13,7 @@ public class Cl410t {
     }
 
     public int getID() {return myID;}
-    public int getIncome() {return myIncome;}
+    public double getIncome() {return myIncome;}
     public int getMembers() {return myMembers;}
 
     public String toString() {
