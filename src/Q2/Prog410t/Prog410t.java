@@ -14,8 +14,9 @@ public class Prog410t {
             int ID = 0;
             double Income = 0;
             int Members = 0;
-            int totalIncome = 0;
+            double totalIncome = 0;
             int participants = 0;
+            double belowPovLevel = 0;
             while (input.hasNext()) {
                 ID = input.nextInt();
                 Income = input.nextInt();
@@ -24,6 +25,7 @@ public class Prog410t {
                 System.out.println(wowsa.toString());
                 totalIncome += Income;
                 participants++;
+                if (Income < 3750 + 750 * (Members-2)) belowPovLevel++;
             }
             input = new Scanner(new File("Langdat/survey2.dat"));
             while (input.hasNext()) {
@@ -34,6 +36,7 @@ public class Prog410t {
                 System.out.println(wowsa.toString());
                 totalIncome += Income;
                 participants++;
+                if (Income < 3750 + 750 * (Members-2)) belowPovLevel++;
             }
             input = new Scanner(new File("Langdat/survey.dat"));
             System.out.println("Households exceeding the an average income of $" + (totalIncome/participants));
@@ -58,8 +61,9 @@ public class Prog410t {
                     Cl410t wowsa = new Cl410t(ID, Income, Members);
                     System.out.println(wowsa.toString());
                 }//print percentage of households below poverty level
-
             }
+            System.out.println("Percent of households below poverty level =");
+            System.out.println((belowPovLevel/participants)*100);
         } catch (IOException e) {
             System.out.println("cant find data file!");
         }
