@@ -1,4 +1,4 @@
-package Q2.CatArray;
+package Q2;
 
 /**
  * Cat

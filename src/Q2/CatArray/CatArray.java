@@ -1,5 +1,7 @@
 package Q2.CatArray;
 
+import Q2.Cat;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
