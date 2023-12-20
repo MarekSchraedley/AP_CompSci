@@ -63,6 +63,17 @@ public class BigArrayListCat {
                 System.out.println(c.getName() + "\t");
             System.out.println();
 
+            for (int lcv = 0; lcv < cats.size(); lcv++) {
+                if (cats.get(lcv).getCost() < 26) {
+                    cats.remove(lcv);
+                    lcv--;
+                }
+            }
+            System.out.println("11. The cost of the remaining cats are: ");
+            for (Cat c : cats)
+                System.out.print(c.getCost() + "\t");
+            System.out.println();
+
             System.out.println("\n12. The cats being put on a diet are: ");
             for (int lcv = 0; lcv < cats.size(); lcv++) {
                 Cat cat = cats.get(lcv);
