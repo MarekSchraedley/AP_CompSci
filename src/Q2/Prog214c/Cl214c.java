@@ -1,4 +1,4 @@
-package Prog214c;
+package Q2.Prog214c;
 
 public class Cl214c {
     private double myGallons;

@@ -1,4 +1,4 @@
-package Prog215h;
+package Q2.Prog215h;
 
 import java.util.ArrayList;
 
