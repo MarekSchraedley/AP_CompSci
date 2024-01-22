@@ -1,6 +1,6 @@
-package Prog215i;
+package Q2.Prog215i;
 
-import Prog215h.Cl215h;
+import Q2.Prog215i.Cl215i;
 
 public class Cl215i {
     private int myVehicle;

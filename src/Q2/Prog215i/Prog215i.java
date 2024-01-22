@@ -1,5 +1,5 @@
-package Prog215i;
-import Prog215h.Cl215h;
+package Q2.Prog215i;
+import Q2.Prog215i.Cl215i;
 
 import java.io.File;
 import java.io.IOException;
