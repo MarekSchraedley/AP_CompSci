@@ -1,5 +1,3 @@
-package Q2;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -28,7 +26,7 @@ public class Prog470a {
             }
 
             for(int lcv = 0; lcv < list1.length; lcv++) {
-                for (int lcv2 = 0; lcv2 < list1[0].length; lcv2++) { //fix this program (rotate 90 degrees?)
+                for (int lcv2 = 0; lcv2 < list1[0].length; lcv2++) {
                     System.out.print(list1[lcv][lcv2] + " ");
                 }
                 System.out.println();
