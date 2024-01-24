@@ -9,7 +9,7 @@ public class prog477a {
     public static void main(String[] args) {
         try {
             Scanner input = new Scanner(new File("Langdat/prog477a.dat"));
-            int[][] array = new int[4][5];
+            int[][] array = new int[3][5];
 
 
 
