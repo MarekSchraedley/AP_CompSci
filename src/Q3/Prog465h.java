@@ -19,7 +19,7 @@ public class Prog465h {
             for (int lcv = 0; lcv < array.length; lcv++) {
                 for (int lcv2 = 0; lcv2 < array[0].length; lcv2++) {
                     if (array[lcv][lcv2] != 0) {
-                        //print out info about nonzero number in array
+                        System.out.println(array[lcv][lcv2] + " " + lcv + " " + lcv2); // i maybe did this wrong check the doc
                     }
                 }
             }
