@@ -39,10 +39,10 @@ public class Prog607a {
             code = input.next();
             month = letters.indexOf(code.substring(0,1))+1;
             if (!(code.substring(1, 2).equals("O"))) {
-                dayString += (letters.indexOf(code.substring(1, 2)) - 16);
+                dayString += (letters.indexOf(code.substring(1, 2)) - 15);
             }
-            dayString += (letters.indexOf(code.substring(2, 3)) - 16);
-            year = letters.indexOf(code.substring(3,4))+70;
+            dayString += (letters.indexOf(code.substring(2, 3)) - 15);
+            year = backwards.indexOf(code.substring(3,4))+71;
             System.out.println(month + "/" + dayString + "/" + year); //Decode Date does not work correctly. Fix it
         }
     }
