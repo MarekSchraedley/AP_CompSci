@@ -43,7 +43,7 @@ public class Prog607a {
             }
             dayString += (letters.indexOf(code.substring(2, 3)) - 15);
             year = backwards.indexOf(code.substring(3,4))+71;
-            System.out.println(month + "/" + dayString + "/" + year); //Decode Date does not work correctly. Fix it
+            System.out.println(month + "/" + dayString + "/" + year);
         }
     }
 }
