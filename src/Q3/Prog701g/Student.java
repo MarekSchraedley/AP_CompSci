@@ -8,5 +8,6 @@ public class Student extends Person {
         myGPA = gpa;
     }
 
-    public double getGPA() {return myGPA;}
+    public double getGPA() {return myGPA;
+    }
 }
