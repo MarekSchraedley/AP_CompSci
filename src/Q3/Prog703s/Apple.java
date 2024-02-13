@@ -1,15 +1,14 @@
 package Q3.Prog703s;
 
-public class Apple /**extends comps*/ {
-    /**
-    public String getName() {
+public class Apple extends Computer {
 
-    }
-    public String getNumber() {
+    private String myColor;
+     public Apple(String name, int num, int val, String color) {
+         super(name, num, val);
+         myColor = color;
+     }
 
-    }
-    public String getValue() {
-
-    }
-     */
+     public String getColor() {
+         return myColor;
+     }
 }
