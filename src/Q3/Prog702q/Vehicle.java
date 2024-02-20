@@ -1,6 +1,6 @@
 package Q3.Prog702q;
 
-public class Vehicle extends names {
+public class Vehicle implements names {
     String myName = "";
     int myTires = 0;
     double myValue = 0;
