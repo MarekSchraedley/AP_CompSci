@@ -12,7 +12,7 @@ import java.util.function.BiConsumer;
 public class Prog702q {
     public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(new File("Langdat/prog702q.dat"));
+            Scanner input = new Scanner(new File("Langdat/prog702q.txt"));
             List<Vehicle> list = new ArrayList<Vehicle>();
             String longestHome = "";
             int vehicles = 0;
@@ -23,6 +23,9 @@ public class Prog702q {
             int type = 0;
             String name = "";
             int tires = 0;
+            int carWheels = 0;
+            int truckWheels = 0;
+            int busWheels = 0;
             while (input.hasNext()) {
                 type = input.nextInt();
                 name = input.next();
@@ -37,7 +40,7 @@ public class Prog702q {
                     list.add(v);
                 } else if (type == 3) {
                     String home = input.next();
-                    Vehicle v = new Buses(name, tires, home);\
+                    Vehicle v = new Buses(name, tires, home);
                     list.add(v);
                 }
                 vehicles++;
@@ -66,10 +69,26 @@ public class Prog702q {
                 if (truck instanceof Trucks) {
                     if (truck.getValue() < smallTruckValue) {
                         smallTruckValue = truck.getValue();
-                        smallTruckName = truck.getName(); // finish this program, find truck with least value
+                        smallTruckName = truck.getName();
                     }
                 }
             }
+            System.out.println("The truck with the least value is " + smallTruckName);
+
+            for (Vehicle myVehicle : list) {
+                if (myVehicle instanceof Cars) {
+                    carWheels += myVehicle.getTires();
+                }
+                if (myVehicle instanceof Trucks) {
+                    truckWheels += myVehicle.getTires();
+                }
+                if (myVehicle instanceof Buses) {
+                    busWheels += myVehicle.getTires();
+                }
+            }
+            System.out.println("The total amount of wheels on cars is " + carWheels);
+            System.out.println("The total amount of wheels on trucks is " + truckWheels);
+            System.out.println("The total amount of wheels on buses is " + busWheels);
 
         } catch (IOException e) {
             System.out.println("cant find data file!");
