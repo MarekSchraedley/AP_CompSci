@@ -8,7 +8,6 @@ public class Animal implements names {
         myWord = word;
     }
 
-    @Override
     public String getName() {return myName;}
     public String getWord() {return myWord;}
 }
