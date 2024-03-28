@@ -1,4 +1,6 @@
 package Q3.Prog505t;
+import java.util.ArrayList;
+import java.util.List;
 
 public interface IFarm {
     /** Feeds all cows where farm has enough food */
