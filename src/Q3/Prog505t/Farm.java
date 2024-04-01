@@ -37,8 +37,97 @@ public class Farm implements IFarm{
     }
 
     private boolean feedCows() {
-        for (int i = 0; i < myCows.size(); i++) {
-
+        int tempHay = myNumHayBales;
+        int tempCorn = myNumCorn;
+        for (int lcv = 0; lcv < myCows.size(); lcv++) {
+            tempHay -= myCows.get(lcv).getHayBales();
+            tempCorn -= myCows.get(lcv).getCorn();
         }
+        if (tempHay >= 0 && tempCorn >= 0) {
+            myNumHayBales = tempHay;
+            myNumCorn = tempCorn;
+            return true;
+        }
+        return false;
     }
+
+    private boolean feedHorses() {
+        int tempHay = myNumHayBales;
+        int tempCorn = myNumCorn;
+        for (int lcv = 0; lcv < myHorses.size(); lcv++) {
+            tempHay -= myHorses.get(lcv).getHayBales();
+            tempCorn -= myHorses.get(lcv).getCorn();
+        }
+        if (tempHay >= 0 && tempCorn >= 0) {
+            myNumHayBales = tempHay;
+            myNumCorn = tempCorn;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean feedAllAnimals() {
+        int tempHay = myNumHayBales;
+        int tempCorn = myNumCorn;
+        for (int lcv = 0; lcv < myCows.size(); lcv++) {
+            tempHay -= myCows.get(lcv).getHayBales();
+            tempCorn -= myCows.get(lcv).getCorn();
+        }
+        for (int lcv = 0; lcv < myHorses.size(); lcv++) {
+            tempHay -= myHorses.get(lcv).getHayBales();
+            tempCorn -= myHorses.get(lcv).getCorn();
+        }
+        if (tempHay >= 0 && tempCorn >= 0) {
+            myNumHayBales = tempHay;
+            myNumCorn = tempCorn;
+            return true;
+        }
+        return false;
+    }
+
+    private double cowIncome(double perPound)  {
+        double income = 0;
+        for (int lcv = 0; lcv < myCows.size(); lcv++) {
+            income += perPound * myCows.get(lcv).getMilk();
+        }
+        return income;
+    }
+    private double horseIncome() {
+        double income = 0;
+        for (int lcv = 0; lcv < myHorses.size(); lcv++) {
+            income += myHorses.get(lcv).getRides() * myHorses.get(lcv).getRideCost();
+        }
+        return income;
+    }
+
+    public double farmIncome() {
+        return cowIncome(0.20) + horseIncome();
+    }
+
+    public int getWeight() {
+        int weight = 0;
+        for (int lcv = 0; lcv < myCows.size(); lcv++) {
+            weight += myCows.get(lcv).getWeight();
+        }
+        for (int lcv = 0; lcv < myHorses.size(); lcv++) {
+            weight += myHorses.get(lcv).getWeight();
+        }
+        return weight;
+    }
+
+    public double getCost() {
+        int tempHay = 0;
+        int tempCorn = 0;
+        for (int lcv = 0; lcv < myCows.size(); lcv++) {
+            tempHay += myCows.get(lcv).getHayBales();
+            tempCorn += myCows.get(lcv).getCorn();
+        }
+        for (int lcv = 0; lcv < myHorses.size(); lcv++) {
+            tempHay += myHorses.get(lcv).getHayBales();
+            tempCorn += myHorses.get(lcv).getCorn();
+        }
+        return (tempHay * myHayCost) + (tempCorn * myCornCost);
+    }
+
+
 }
