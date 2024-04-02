@@ -14,26 +14,13 @@ public class Farm implements IFarm{
     private static double myHayCost;
     private static double myCornCost;
 
-    public static void main(String[] args) {
-        try {
-            Scanner input = new Scanner(new File("Langdat/"));
-            myCows = new ArrayList<>();
-            myHorses = new ArrayList<>();
-            myNumHayBales = input.nextInt();
-            myHayCost = input.nextDouble();
-            myNumCorn = input.nextInt();
-            myCornCost = input.nextDouble();
-            for (int lcv = 0; lcv < input.nextInt(); lcv++) {
-                myCows.add(new Cow(input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt()));
-            }
-            for (int lcv = 0; lcv < input.nextInt(); lcv++) {
-                myHorses.add(new Horse(input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt(), input.nextDouble()));
-            }
-
-
-        } catch (IOException e) {
-            System.out.println("cant find data file!");
-        }
+    public Farm(ArrayList<Horse> Horses, ArrayList<Cow> Cows, int numHayBales, int numCorn, double hayCost, double cornCost) {
+        myHorses = Horses;
+        myCows = Cows;
+        myNumHayBales = numHayBales;
+        myNumCorn = numCorn;
+        myHayCost = hayCost;
+        myCornCost = cornCost;
     }
 
     private boolean feedCows() {
@@ -129,5 +116,19 @@ public class Farm implements IFarm{
         return (tempHay * myHayCost) + (tempCorn * myCornCost);
     }
 
+    public ArrayList<Cow> getCows() {
+        return myCows;
+    }
 
+    public ArrayList<Horse> getHorses() {
+        return myHorses;
+    }
+
+    public int getHayBales() {
+        return myNumHayBales;
+    }
+
+    public int getCorn() {
+        return myNumCorn;
+    }
 }
