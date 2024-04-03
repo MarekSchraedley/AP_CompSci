@@ -131,4 +131,9 @@ public class Farm implements IFarm{
     public int getCorn() {
         return myNumCorn;
     }
+
+    public void removeCow(int index) {myCows.remove(index);}
+
+    public void removeHorse(int index) {myHorses.remove(index);}
+
 }

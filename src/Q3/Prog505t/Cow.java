@@ -12,6 +12,12 @@ public class Cow {
         myCorn = corn;
         myHayBales = hay;
     }
+    public void setCow(int weight, int milk, int corn, int hay) {
+        myWeight = weight;
+        myMilk = milk;
+        myCorn = corn;
+        myHayBales = hay;
+    }
 
 
     public int getWeight() {return myWeight;}
