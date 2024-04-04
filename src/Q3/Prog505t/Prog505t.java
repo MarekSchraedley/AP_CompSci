@@ -14,17 +14,19 @@ public class Prog505t {
     private static double myCornCost;
     public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(new File("Langdat/Prog505t.dat"));
+            Scanner input = new Scanner(new File("Langdat/prog505t.dat"));
             myCows = new ArrayList<>();
             myHorses = new ArrayList<>();
             myNumHayBales = input.nextInt();
             myHayCost = input.nextDouble();
             myNumCorn = input.nextInt();
             myCornCost = input.nextDouble();
-            for (int lcv = 0; lcv < input.nextInt(); lcv++) {
+            int iterations = input.nextInt();
+            for (int lcv = 0; lcv < iterations; lcv++) {
                 myCows.add(new Cow(input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt()));
             }
-            for (int lcv = 0; lcv < input.nextInt(); lcv++) {
+            iterations = input.nextInt();
+            for (int lcv = 0; lcv < iterations; lcv++) {
                 myHorses.add(new Horse(input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt(), input.nextDouble()));
             }
             Farm myFarm = new Farm(myHorses, myCows, myNumHayBales, myNumCorn, myHayCost, myCornCost);
@@ -50,16 +52,16 @@ public class Prog505t {
                 System.out.println("Removed cow at index " + lowestCowIndex);
             }
             for (int lcv = 0; lcv < 2; lcv++) {
-                int lowestIncome = Integer.MAX_VALUE;
+                double lowestIncome = Integer.MAX_VALUE;
                 int lowestHorseIndex = 0;
-                for (int lcv2 = 0; lcv2 < myFarm.getCows().size(); lcv2++) {
+                for (int lcv2 = 0; lcv2 < myFarm.getHorses().size(); lcv2++) {
                     if (myFarm.getHorses().get(lcv2).getRideCost() < lowestIncome) {
-                        lowestIncome = myFarm.getCows().get(lcv2).getMilk();
+                        lowestIncome = myFarm.getHorses().get(lcv2).getRideCost();
                         lowestHorseIndex = lcv2;
                     }
                 }
                 myFarm.removeHorse(lowestHorseIndex);
-                System.out.println("Removed cow at index " + lowestHorseIndex);
+                System.out.println("Removed horse at index " + lowestHorseIndex);
             }
 
             myFarm.getCows().get(0).setCow(1250, 80, 3, 4);
