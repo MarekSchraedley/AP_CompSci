@@ -10,7 +10,6 @@ public class MSOE2022_5 {
         Scanner input = new Scanner(System.in);
         ArrayList<Integer> Shells = new ArrayList<>();
         ArrayList<Integer> Buckets = new ArrayList<>();
-        Buckets.add(0);
         System.out.println("How many shells? ");
         int shells = input.nextInt();
         for (int lcv = 0; lcv < shells; lcv++) {
@@ -30,7 +29,7 @@ public class MSOE2022_5 {
                     lcv2++;
                 }
                 if (shellFits == false) {
-                    Buckets.add(Shells.get(lcv));
+                    Buckets.add(Shells.get(lcv)); // doesent work, fix later
                     Shells.remove(lcv);
                     shellFits = true;
 
