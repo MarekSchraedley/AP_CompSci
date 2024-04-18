@@ -14,4 +14,9 @@ public class PetManager {
         pets.remove(pet);
     }
 
+    public ArrayList<Pet> getPetList() {
+        return pets;
+    }
+
+
 }
