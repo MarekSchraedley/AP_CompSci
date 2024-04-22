@@ -38,7 +38,13 @@ public class MainForm extends JFrame {
         feedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implement feeding the selected pet
+                Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
+                current.setEnergy(current.getEnergy() + 5);
+                current.setHappiness(current.getHappiness() + 5);
+                current.setHunger(current.getHunger() - 5);
+                if (current.getEnergy() > 100) {current.setEnergy(100);}
+                if (current.getHappiness() > 100) {current.setHappiness(100);}
+                if (current.getHunger() < 0) {current.setHunger(0);}
             }
         });
 

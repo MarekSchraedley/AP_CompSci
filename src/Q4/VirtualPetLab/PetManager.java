@@ -18,5 +18,5 @@ public class PetManager {
         return pets;
     }
 
-
+    public Pet getSelectedPet(int lcv) {return pets.get(lcv);}
 }
