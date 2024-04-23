@@ -11,6 +11,9 @@ public class MainForm extends JFrame {
     private JButton feedButton;
     private JButton playButton;
     private JButton sleepButton;
+    private JButton foxButton;
+    private JButton catButton;
+    private JButton dogButton;
     private JLabel statusLabel;
     private JLabel imageLabel;
     private JComboBox<String> petSelectorComboBox;
@@ -39,12 +42,7 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
-                current.setEnergy(current.getEnergy() + 5);
-                current.setHappiness(current.getHappiness() + 5);
-                current.setHunger(current.getHunger() - 5);
-                if (current.getEnergy() > 100) {current.setEnergy(100);}
-                if (current.getHappiness() > 100) {current.setHappiness(100);}
-                if (current.getHunger() < 0) {current.setHunger(0);}
+                current.feed();
             }
         });
 
@@ -53,6 +51,8 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement playing with the selected pet
+                Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
+                current.play();
             }
         });
 
@@ -61,6 +61,8 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement putting the selected pet to sleep
+                Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
+                current.sleep();
             }
         });
 
@@ -79,6 +81,29 @@ public class MainForm extends JFrame {
         });
 
         // TODO: Implement adoption button actions
+        foxButton.addActionListener((new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (!(name.trim().isEmpty()) && name != null) {
+
+                }
+            }
+        }));
+
+        catButton.addActionListener((new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        }));
+
+        dogButton.addActionListener((new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        }));
     }
 
     public void updateStatusLabel(String status) {
