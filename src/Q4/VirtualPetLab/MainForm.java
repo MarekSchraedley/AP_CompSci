@@ -43,6 +43,8 @@ public class MainForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
                 current.feed();
+                updateStatusLabel();
+                waitButtons(1);
             }
         });
 
@@ -53,6 +55,8 @@ public class MainForm extends JFrame {
                 // TODO: Implement playing with the selected pet
                 Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
                 current.play();
+                updateStatusLabel();
+                waitButtons(1);
             }
         });
 
@@ -63,6 +67,8 @@ public class MainForm extends JFrame {
                 // TODO: Implement putting the selected pet to sleep
                 Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
                 current.sleep();
+                updateStatusLabel();
+                waitButtons(1);
             }
         });
 
@@ -75,8 +81,11 @@ public class MainForm extends JFrame {
 
                 // TODO: Implement pet selection change
                 // 1. Grab the current pet from the petManager using petSelectorComboBox.getSelectedIndex()
+                Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
                 // 2. Update statusLabel with the selected pet's status
+                updateStatusLabel();
                 // 3. Update imageLabel with the selected pet's image using setPetImage()
+                setPetImage(current.getImage());
             }
         });
 
@@ -86,7 +95,9 @@ public class MainForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String name = JOptionPane.showInputDialog("Enter new pet name: ");
                 if (!(name.trim().isEmpty()) && name != null) {
-
+                    petManager.addPet(new Fox(name));
+                    petSelectorComboBox.addItem(name);
+                    updateStatusLabel();
                 }
             }
         }));
@@ -94,20 +105,32 @@ public class MainForm extends JFrame {
         catButton.addActionListener((new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (!(name.trim().isEmpty()) && name != null) {
+                    petManager.addPet(new Cat(name));
+                    petSelectorComboBox.addItem(name);
+                    updateStatusLabel();
+                }
             }
         }));
 
         dogButton.addActionListener((new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (!(name.trim().isEmpty()) && name != null) {
+                    petManager.addPet(new Dog(name));
+                    petSelectorComboBox.addItem(name);
+                    updateStatusLabel();
+                }
             }
         }));
     }
 
-    public void updateStatusLabel(String status) {
+    public void updateStatusLabel() {
         // TODO: Update statusLabel with the provided status
+        Pet current = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
+        statusLabel.setText("Hunger: " + current.getHunger() + ", Energy: " + current.getEnergy() +", Happiness: " + current.getHappiness());
     }
 
     public void updatePetList() {
@@ -115,6 +138,7 @@ public class MainForm extends JFrame {
         // TODO: Update petSelectorComboBox with pet names from petManager
         for (int lcv = 0; lcv < petManager.getPetList().size(); lcv++) {
             petSelectorComboBox.addItem(petManager.getPetList().get(lcv).getName());
+
         }
         // After adding the pet, set the selected index to the last item (petManager.getPets().size() - 1)
     }
