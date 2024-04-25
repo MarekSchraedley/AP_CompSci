@@ -96,7 +96,7 @@ public class MainForm extends JFrame {
                 String name = JOptionPane.showInputDialog("Enter new pet name: ");
                 if (!(name.trim().isEmpty()) && name != null) {
                     petManager.addPet(new Fox(name));
-                    petSelectorComboBox.addItem(name);
+                    updatePetList();
                     updateStatusLabel();
                 }
             }
@@ -108,7 +108,7 @@ public class MainForm extends JFrame {
                 String name = JOptionPane.showInputDialog("Enter new pet name: ");
                 if (!(name.trim().isEmpty()) && name != null) {
                     petManager.addPet(new Cat(name));
-                    petSelectorComboBox.addItem(name);
+                    updatePetList();
                     updateStatusLabel();
                 }
             }
@@ -120,7 +120,7 @@ public class MainForm extends JFrame {
                 String name = JOptionPane.showInputDialog("Enter new pet name: ");
                 if (!(name.trim().isEmpty()) && name != null) {
                     petManager.addPet(new Dog(name));
-                    petSelectorComboBox.addItem(name);
+                    updatePetList();
                     updateStatusLabel();
                 }
             }
@@ -138,8 +138,8 @@ public class MainForm extends JFrame {
         // TODO: Update petSelectorComboBox with pet names from petManager
         for (int lcv = 0; lcv < petManager.getPetList().size(); lcv++) {
             petSelectorComboBox.addItem(petManager.getPetList().get(lcv).getName());
-
         }
+        petSelectorComboBox.setSelectedIndex(petManager.getPetList().size()-1);
         // After adding the pet, set the selected index to the last item (petManager.getPets().size() - 1)
     }
 
