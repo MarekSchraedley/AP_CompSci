@@ -8,7 +8,14 @@ public class Transaction {
 
     // TODO: Implement constructor (isbn, patronId, checkoutDate); set returnDate to null by default
 
+    public Transaction(String myIsbn, String myPatronId, String myCheckoutDate) {
+        isbn = myIsbn;
+        patronId = myPatronId;
+        checkoutDate = myCheckoutDate;
+    }
+
     // TODO: Implement getters and setters
+
 
     @Override
     public String toString() {

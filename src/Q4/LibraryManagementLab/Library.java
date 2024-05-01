@@ -14,10 +14,42 @@ public class Library implements LibrarySystem {
 
     // Implement interface methods
     @Override
-    public void addBook(Book book) { /* Implementation; remember to add in sorted order */ }
+    public void addBook(Book book) { /* Implementation; remember to add in sorted order */
+        int lcv = 0;
+        boolean bookFound = false;
+        while (lcv < books.size() && bookFound == true) {
+            if (book.getTitle().compareTo(books.get(lcv).getAuthor()) > 0) {
+                bookFound = true;
+            }
+            lcv++;
+
+        }
+        books.add(lcv, book);
+    }
     @Override
     public void removeBook(String isbn) { /* Implementation */ }
     // Other methods...
+    public void addPatron(Patron patron) {
+
+    }
+    public void removePatron(String patronId) {
+
+    }
+    public void createTransaction(String isbn, String patronId, String checkoutDate) {
+
+    }
+
+    public void updateTransaction(String isbn, String patronId, String returnDate) {
+
+    }
+
+    public boolean checkoutBook(String isbn, String patronId) {
+
+    }
+
+    public boolean checkinBook(String isbn, String patronId) {
+
+    }
 
     @Override
     public void viewMostRecentTransaction(String isbn) {
