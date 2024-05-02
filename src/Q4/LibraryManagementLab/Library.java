@@ -27,24 +27,35 @@ public class Library implements LibrarySystem {
         books.add(lcv, book);
     }
     @Override
-    public void removeBook(String isbn) { /* Implementation */ }
+    public void removeBook(String isbn) {
+
+    }
     // Other methods...
     public void addPatron(Patron patron) {
-
+        patrons.add(patron);
     }
     public void removePatron(String patronId) {
-
+        for (int lcv = 0; lcv < patrons.size(); lcv++) {
+            if (patrons.get(lcv).getPatronId().equals(patronId)) {
+                patrons.remove(lcv);
+                lcv--;
+            }
+        }
     }
     public void createTransaction(String isbn, String patronId, String checkoutDate) {
-
+        transactions.add(new Transaction(isbn, patronId, checkoutDate));
     }
 
-    public void updateTransaction(String isbn, String patronId, String returnDate) {
-
+    public void updateTransaction(Transaction t, String isbn, String patronId, String returnDate) {
+        t.setCheckoutDate(returnDate);
     }
 
     public boolean checkoutBook(String isbn, String patronId) {
+        for (int lcv = 0; lcv < patrons.size(); lcv++) {
+            if (patrons.get(lcv).getPatronId().equals(patronId)) {
 
+            }
+        }
     }
 
     public boolean checkinBook(String isbn, String patronId) {

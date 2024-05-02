@@ -15,6 +15,10 @@ public class Transaction {
     }
 
     // TODO: Implement getters and setters
+    public String getIsbn() {return isbn;}
+    public String getPatronId() {return patronId;}
+    public String getCheckoutDate() {return checkoutDate;}
+    public void setCheckoutDate(String myCheckoutDate) {checkoutDate = myCheckoutDate;}
 
 
     @Override

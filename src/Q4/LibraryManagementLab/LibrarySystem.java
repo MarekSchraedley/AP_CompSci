@@ -6,7 +6,7 @@ public interface LibrarySystem {
     void addPatron(Patron patron);
     void removePatron(String patronId);
     void createTransaction(String isbn, String patronId, String checkoutDate);
-    void updateTransaction(String isbn, String patronId, String returnDate);
+    void updateTransaction(Transaction t, String isbn, String patronId, String returnDate);
     void viewMostRecentTransaction(String isbn);
     boolean checkoutBook(String isbn, String patronId);
     boolean checkinBook(String isbn, String patronId);
