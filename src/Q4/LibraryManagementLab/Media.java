@@ -16,4 +16,5 @@ public abstract class Media {
     public String getTitle() {return title;}
     public String getIsbn() {return isbn;}
     public void setCheckedOut(boolean checkedOut) { isCheckedOut = checkedOut; }
+    public boolean getCheckedOut() {return isCheckedOut;}
 }

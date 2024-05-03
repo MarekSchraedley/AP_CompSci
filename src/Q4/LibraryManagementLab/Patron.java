@@ -17,6 +17,7 @@ public class Patron {
     // Basic getters
     public String getName() { return name; }
     public String getPatronId() { return patronId; }
+    public ArrayList<Book> getCheckedOutBooks() { return checkedOutBooks; }
 
     // TODO: Implement checkInBook(Book book) and checkOutBook(Book book) methods (remove/add book from checkedOutBooks)
     public void checkInBook(Book book) {

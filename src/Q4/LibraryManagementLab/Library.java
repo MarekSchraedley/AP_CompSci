@@ -17,7 +17,7 @@ public class Library implements LibrarySystem {
     public void addBook(Book book) { /* Implementation; remember to add in sorted order */
         int lcv = 0;
         boolean bookFound = false;
-        while (lcv < books.size() && bookFound == true) {
+        while (lcv < books.size() && bookFound != true) {
             if (book.getTitle().compareTo(books.get(lcv).getAuthor()) > 0) {
                 bookFound = true;
             }
@@ -51,15 +51,37 @@ public class Library implements LibrarySystem {
     }
 
     public boolean checkoutBook(String isbn, String patronId) {
+        boolean checkedOut = false;
         for (int lcv = 0; lcv < patrons.size(); lcv++) {
             if (patrons.get(lcv).getPatronId().equals(patronId)) {
-
+                for (int lcv2 = 0; lcv2 < books.size(); lcv2++) {
+                    if (books.get(lcv2).getIsbn().equals(isbn)) {
+                        if (!books.get(lcv2).getCheckedOut()); {
+                            patrons.get(lcv).checkOutBook(books.get(lcv2));
+                            checkedOut = true;
+                        }
+                    }
+                }
             }
         }
+        return checkedOut;
     }
 
     public boolean checkinBook(String isbn, String patronId) {
-
+        boolean checkedIn = false;
+        for (int lcv = 0; lcv < patrons.size(); lcv++) {
+            if (patrons.get(lcv).getPatronId().equals(patronId)) {
+                for (int lcv2 = 0; lcv2 < books.size(); lcv2++) {
+                    if (books.get(lcv2).getIsbn().equals(isbn)) {
+                        if (books.get(lcv2).getCheckedOut()); {
+                            patrons.get(lcv).checkInBook(books.get(lcv2));
+                            checkedIn = true;
+                        }
+                    }
+                }
+            }
+        }
+        return checkedIn;
     }
 
     @Override
