@@ -96,11 +96,17 @@ public class Library implements LibrarySystem {
     @Override
     public Book findClosestBook(String title) {
         // TODO: Search for the closest book title using .toLowerCase() and .contains(); return the closest book or null
+        return null;
     }
 
     @Override
     public Book searchBookByTitle(String title) {
         // TODO: Binary search for book; if not found, return the closest book
+        return null;
+    }
+
+    public Book searchBookByAuthor(String author) {
+        return null;
     }
 
     // You might want to add some helper methods here like getBookByIsbn, getPatronById, etc.
