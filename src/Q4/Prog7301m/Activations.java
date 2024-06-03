@@ -1,5 +1,7 @@
 package Q4.Prog7301m;
 
+import java.io.Serializable;
+
 public class Activations {
     interface Activation {
         public double activate(double value);
