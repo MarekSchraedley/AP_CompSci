@@ -8,7 +8,7 @@ public class Test7301m {
         var yte = new ArrayList<Double[]>();
         Prog7301m.readAndEncodeCSV("Langdat/prog7301m_test.csv", 10, Xte, yte);
 
-        var model = MultiLayerPerceptron.loadModel("Langdat/prog7301m_model.set");
+        var model = MultiLayerPerceptron.loadModel("Langdat/prog7301m_model.ser");
         if (model == null) return;
 
         double[][] X_test = Prog7301m.toArray(Xte);
